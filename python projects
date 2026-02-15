@@ -1,0 +1,128 @@
+""" #Simple alarm clock
+import datetime
+import time
+print("Simple Alarm Clock")
+alarm_hour = int(input("Enter hour(0-23):"))
+alarm_minute = int(input("Enter minute(0-59):"))
+alarm_second = int(input("Enter minute(0-59):"))
+print("Alarm set successfully!")
+print("Waiting for alarm...")
+while True:
+    current_time = datetime.datetime.now()
+    if (current_time.hour == alarm_minute ==alarm_second):
+        print("\n WAKE UP! ALARM RINGING" )
+        print("")
+        break
+    time.sleep(10) #check time every 10 second
+#Tex Editor App
+from tkinter inport * from tkinter import filedialog,messagebox
+# Main window
+root = TK()
+root.title("Digital Text Editor")
+root.geometry("800x500")
+# Text area
+text_area = Text(root,font=("Arial", 12))
+text_area.pack(fill=BOTH,expand=True)
+file_path = ""
+# Functions
+def new_file():
+ global file_path
+text_area.delete(1.0, END)
+file_path = ""
+root.title("Untitled - Text Editor")
+def open_file():
+ global file_path
+ file_path = filedialog.aspokenfilename(defaultextension)=".txt",filetypes=[("Text Files","*.txt"), ("All Files", "*.*")]
+ if file_path:
+     text_area.delete(1.0, END)
+     with open(file_path, "r" as file:)
+     text_area.insert(END,file.read())
+     root.title(file_path)
+     def save_file():
+      global file_path():
+     if file_path =="":
+      save_as_file()
+     else:
+         with open(file_path, "w" as file:)
+         file.write(text_area.get(1.0,END))
+         messagebox.asksaveasfilename(defaultextension=".txt,filetypes=[("Text Files","*.txt), ("All Files", "*.*")]")
+         if file_path:
+          with open(file_path, "w" as file:)  
+         file.write(text_area.get(1.0,END))
+         #Menu bar
+         menu_bar = Menu(root)
+         root.config(menu=menu_bar)
+         file_menu = Menu(menu_bar,tearoff=0)
+         menu_bar.add_cascade(label="File", menu=file_menu)
+         menu_bar.add_command(label="New", menu=file_menu)
+         file_menu.add_command(label="Open", command=open_file)
+         file_menu.add_command(label="Save ", command=save_file)
+         file_menu.add_command(label="Save As", command=save_as_file)
+         file_menu.add_separator()
+         file_menu.add_command(label="Exit", command=root.quit)
+         edit_menu = Menu(menu_bar, tearoff=0)
+         menu_bar.add_cascade(label="Edit", menu=edit_menu)
+         edit_menu.add_command(label="Cut", command=lambda: text_area.event_generate("<<Cut>>"))
+         edit_menu.add_command(label="Copy",command=lambda: text_area.event_generate("<<Copy>>"))
+         edit_menu.add_command(label="Paste",command=lambda: text_area.event_generate("<<Paste>>"))
+         root.menuloop()
+         #bASIC CHATBOT
+print("Chatbot: Hello I am your chatbot.")
+print("Type 'bye' to exit.\n")
+while True:
+    user = input("You:").lower()
+    if user == "bye":
+        print("Chatbot: Goodbye! Have a nice day")
+    elif "hello" in user or "hi" in user:
+        print("chatbot: Hello ther!")
+    elif "how are you" in user:
+        print("Chatbot: I am just a program, i am doing great!")
+    elif "your name" in user:
+        print("Chatbot: I am a simple Python chatbot.")
+    elif "weather" in user:
+        print("Chatbot: I cannot check real weather yet.")
+    else:
+        print("Chatbot: Sorry, I dont understand that.ko")"""
+        #GUI CHATBOT
+import tkinter as tk
+from tkinter import scrolledtext
+
+# Simple chatbot logic
+def chatbot_response(user_input):
+    user_input = user_input.lower()
+    if "hello" in user_input:
+        return "Hi there! 😊"
+    elif "how are you" in user_input:
+        return "I'm just code, but I'm doing great!"
+    elif "bye" in user_input:
+        return "Goodbye! Have a nice day!"
+    else:
+        return "Sorry, I don't understand that."
+
+# Send message function
+def send_message():
+    user_message = entry_box.get()
+    if user_message.strip() == "":
+        return
+
+    chat_area.insert(tk.END, "You: " + user_message + "\n")
+    response = chatbot_response(user_message)
+    chat_area.insert(tk.END, "Bot: " + response + "\n\n")
+
+    entry_box.delete(0, tk.END)
+    chat_area.yview(tk.END)
+
+# Create main window
+root = tk.Tk()
+root.title("Python GUI Chatbot")
+root.geometry("400x500")
+
+# Chat display area
+chat_area = scrolledtext.ScrolledText(root, wrap=tk.WORD)
+chat_area.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
+chat_area.config(state='normal')
+
+# Input field
+entry_box = tk.Entr_
+
+        
