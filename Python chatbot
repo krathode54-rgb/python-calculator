@@ -1,0 +1,37 @@
+# Simple chatbot logic
+def chatbot_response(user_input):
+    user_input = user_input.lower()
+    if "hello" in user_input:
+        return "Hi there! 😊"
+    elif "how are you" in user_input:
+        return "I'm just code, but I'm doing great!"
+    elif "bye" in user_input:
+        return "Goodbye! Have a nice day!"
+    else:
+        return "Sorry, I don't understand that."
+
+# Send message function
+def send_message():
+    user_message = entry_box.get()
+    if user_message.strip() == "":
+        return
+
+    chat_area.insert(tk.END, "You: " + user_message + "\n")
+    response = chatbot_response(user_message)
+    chat_area.insert(tk.END, "Bot: " + response + "\n\n")
+
+    entry_box.delete(0, tk.END)
+    chat_area.yview(tk.END)
+
+# Create main window
+root = tk.Tk()
+root.title("Python GUI Chatbot")
+root.geometry("400x500")
+
+# Chat display area
+chat_area = scrolledtext.ScrolledText(root, wrap=tk.WORD)
+chat_area.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
+chat_area.config(state='normal')
+
+# Input field
+entry_box = tk.Entr_
