@@ -1,0 +1,13 @@
+# Mad Libs Generator
+
+name = input("Enter a name: ")
+place = input("Enter a place: ")
+animal = input("Enter an animal: ")
+verb = input("Enter a verb: ")
+adjective = input("Enter an adjective: ")
+
+print("\n--- Mad Libs Story ---")
+print(f"One day, {name} went to {place}.")
+print(f"There, {name} saw a {adjective} {animal}.")
+print(f"The {animal} started to {verb}.")
+print(f"{name} was surprised and ran away!")
